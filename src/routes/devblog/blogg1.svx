@@ -1,0 +1,18 @@
+---
+title: "Blogg1"
+date: "2025-04-09"
+---
+Steg framåt
+
+
+
+
+Jag började med att omstrukturera min kod så att den blev enklare att förstå.
+
+
+Därefter lade jag till position atribut till olika element för att lättare kunna styla de.
+
+
+Sedan lades divar till som ska fungera som mätare, där dess bakgrundsfärg ökar eller minskar i ifyllnad.
+
+
