@@ -1,0 +1,12 @@
+---
+title: "Mer komplett"
+date: "2025-05-14"
+---
+
+I spelet finns nu ett moln tillagt som far fram och tillbaka. Regndroppar som regnar ner ska kunna fylla törstmätaren.
+<br>
+Mätarna för mat, vatten och lycka visar nu en röd mätare för den av dem som når botten först.
+<br>
+Jag har också fixat att man kunnat hålla ned piltangenterna och fått karaktären att flytta sig fort och förbi punkter där den ska stannas vid kanten av spelutrymmet.
+<br>
+Det går nu en viss tid innan karaktären kan flytta på sig igen.

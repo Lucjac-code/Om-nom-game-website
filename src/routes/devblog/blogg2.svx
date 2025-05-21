@@ -1,0 +1,11 @@
+---
+title: "Fler animationer!"
+date: "2025-05-07"
+---
+
+Sedan förra blogginlägget har jag bland annat lagt till en animation när ens karaktär flyttas i sidleds.
+Animationen gjordes med requestanimationframe som jag blev tipsad om under halvägspresentationen, och lite hjälp från Lisa.
+
+Munnen på om nom monstret kan nu också vara öppen eller stängd, för att det ska se ut som att den gapar och stänger munen.
+
+Förutom funktionalitet har jag lagt till en godis automat i spelet som sedan ge om nom mat.
