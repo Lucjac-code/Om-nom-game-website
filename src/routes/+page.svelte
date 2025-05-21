@@ -21,8 +21,8 @@
 	let right_key=true;
 	let up_key=true;
 	let candy_invisible=false;
-	let rain=false;
-	let rain_drops= [{name:"drop", value:false}]
+	let rain=true;
+	let rain_drops= [{name:"drop", value:false,image:"",height:0},{name:"drop", value:false,image:"",height:0},{name:"drop", value:false,image:"",height:0}];
 	setInterval(bar_values_reduce, 60);
 	setInterval(candy_spawn,100);
 	setInterval(candy_move,20);
@@ -61,10 +61,16 @@
 		if (food==true){
 			candy_y+=2;
 		}
-		if  (candy_y>190 && candy_y< 220){
+		if  (candy_y>190 && candy_y< 200){
 			
 			if (eating==true && om_nom_x==-354){
 				candy_invisible=true;
+				bar_values[0]+=100;
+				bar_values=bar_values;
+				if (bar_values[0]>100){
+					bar_values[0]=100;
+					bar_values=bar_values;
+				}
 				/*styling ändras inte när invisible blir false*/
 				/*lägg till att godisförsvinner om om nom inte tar den*/
 				/*fixa att godis kan försvinna för tidigt*/
@@ -108,7 +114,9 @@
 		}
 			
 	}
-			
+			/*async function spawn_drops(){
+				await new Promise(resolve =>setTimeout(resolve,10));i dunno maybe heello worldesles
+			}*/
 	async function left_animation(){
 		
 			if (om_nom_x>-354){
@@ -230,7 +238,10 @@
 			{/if}
 			{#if rain}
 				{#each rain_drops as drop}
-					<img src="rain.png" alt="">
+					{#if drop.value}
+						<img class="drop" style="margin-left:{cloud_x}; margin-top:{drop.height}px"src="rain.png" alt="">
+					{/if}
+				
 				{/each}
 				
 			{/if}
@@ -276,7 +287,7 @@
 		background-image: url("brown-background.jpg")
 	}
 	.game{
-		background-image: url("Cardboard.jpg");
+		background-image: url("/Cardboard.jpg");
 		width:65vw;
 		height:98vh;
 		position:relative;
@@ -309,7 +320,13 @@
 		left:15.5%;
 		z-index: 3;
 	}
-	
+	.drop{
+		position:relative;
+		width:2%;
+		height:3%;
+		left:50%;
+		top:20%;
+	}
 	.cloud{
 		display:flex;
 		width:100px;
