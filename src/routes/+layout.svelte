@@ -37,7 +37,7 @@
 	}
 	nav{
 		background-color: rgb(190, 155, 73);
-		color:rgb(190, 155, 73);
+		
 	}
 </style>
 <slot />

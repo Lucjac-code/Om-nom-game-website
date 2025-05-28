@@ -70,7 +70,7 @@ function bar_values_reduce(){
 					red_bars[i]=true;
 					red_bars= red_bars;
 					bars=false;
-					setTimeout(game_end,1500);/*man ska hinna se röda mätarna som dyker upp innan game over skärmen*/
+					setTimeout(game_end,1500);/*röda mätarna ska hinna dyka upp innan game over skärmen*/
 				}
 				
 			}
@@ -95,6 +95,7 @@ function bar_values_reduce(){
 			}
 		}
 	}
+	/*Karaktären hoppar och lyckomätaren ökar*/
 	async function Happy(){
 		Jumping=true;
 			for (let x=0;x<21;x++){
@@ -127,7 +128,7 @@ function bar_values_reduce(){
 				food=true;
 			}
 		}
-}
+}/*får godisen att falla samt försvinna och öka mätaren för mat om karaktären äter den*/
 	function candy_move(){
 		if (food==true){
 			candy_y+=2;
@@ -182,7 +183,7 @@ async function move_drops(){
 				rain_drops[i].y = 25
 			}
 			else{
-				rain_drops[i].x = cloud_x+10/*är till för att dropparna ska spawna under molnet*/
+				rain_drops[i].x = cloud_x+10/*är till för att dropparna ska hamna spawna under molnet och inte bredvid*/
 				rain_drops[i].y = 25
 			}
 		}
@@ -307,6 +308,7 @@ function onKeyDown(e){
 				<p class="play" on:click={()=> Start()}>Play</p>
 				<img class="Cut_the_rope_logo" src="Cut_the_rope.png" alt="TItle">
 				<img class="Tamagotchi" src="tamagotchi.png" alt="">
+				<p class="Not_compatible" style="color:black;">Not compatible</p>
 			</div>
 		{/if}
 		{#if game_over}
@@ -425,6 +427,11 @@ function onKeyDown(e){
 		position:absolute;
 		top:48%;
 		color:black;
+	}
+	.Not_compatible{
+		top:100%; 
+		justify-self:center;
+		position:absolute;
 	}
 	.game{
 		background-image: url("/Cardboard.jpg");
@@ -657,5 +664,34 @@ function onKeyDown(e){
 		z-index: 1;
 		visibility:hidden;
 	}
-	
+	@media screen and (max-width:600px){
+		.start-screen{
+		display:flex;
+		width:100vw;
+		height:100vh;
+		justify-content:center;
+		flex-direction:row;
+		background-color:white;
+		z-index:5;
+		}
+		
+		.Button-image{
+				display:none;
+		}
+		.play{
+				display:none;
+		}
+		.Cut_the_rope_logo{
+				display:none;
+		}
+		.Tamagotchi{
+				display:none;
+		}
+		.Not_compatible{
+			top:50%;
+			justify-self:center;
+			font-size:60px;
+			z-index:6;
+		}
+	}
 </style>
