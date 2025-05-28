@@ -33,6 +33,11 @@
   height: 100vh;
   width: 100vw;
   overflow: hidden;
+  color:brown;
+	}
+	nav{
+		background-color: rgb(190, 155, 73);
+		color:rgb(190, 155, 73);
 	}
 </style>
 <slot />

@@ -1,0 +1,23 @@
+---
+title: "Nästan färdigt"
+date: "2025-05-26"
+---
+
+Nu har jag abetat med mitt spel under många veckors tid, och det är bara mindre detaljer som återstår innan det är klart.
+Under arbetets gång var nog det svåraste momenten animationer och funktionalitet i spelet.
+<br>
+Animationerna använde requestanimationframe för att de skulle se mindre hackiga ut.
+Ett problem var att karaktären rörde sig för fort. Jag löste detta genom att först skapa ett vilkor som måste vara true för att requestanimationframe ska köras. 
+När requestanimationframe körts sätts vilkoret till false och en settimeout bestämmer hur lång tid det tar innan vilkoret stämmer igen.
+På det här sättet har jag lagt till delay mellan olika händelser i spelet.
+<br>
+<br>
+En annan del var hur monstret ska matas när den står på en specifik plats och öppnar munnen.
+Jag gjorde funktioner som skulle hantera när godisen dyker upp, rör på sig och försvinner. Funktionerna körs av setinterval. När monstret är på en viss plats och gapar ändras variabeln food till true som skapar en bild av en godis i html delen.
+Godisen far sedan neråt och får osynlig styling när den är vid ett visst y värde. 
+Food blir därefter satt till false och godisen försvinner.
+<br>
+<br>
+Klurigaste var att regndroppar skulle falla ner från ett mol som förflyttar sig. Regndropparna har x och y värden i en lista.
+En funktion kollar om regndropparna är inom ett visst y värde och ökar y värdet med ett. Funktionen är en async function, där tids värdet hos resolve avgör hur fort regnet först skapas.
+När någon av regndropparna passerat största värdet av intervallet får den samma x och y värde som molnet. Droppen fortsätter att fara neråt för att den är fortfarande är inom intervallet. 
